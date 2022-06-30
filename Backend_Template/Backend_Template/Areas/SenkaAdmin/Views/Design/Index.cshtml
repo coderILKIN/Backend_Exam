@@ -1,0 +1,58 @@
+﻿@model List<Design>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="table-responsive pt-3">
+    <a style="font-size:20px;color:white" class="btn btn-success mb-3" asp-controller="Design" asp-action="Create">Create Size</a>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>
+                    Image
+                </th>
+                <th>
+                    Title
+                </th>
+                <th>
+                    SubTitle
+                </th>
+                <th>
+                    Setting
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Design design in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="~/assets/img/@design.Image" alt="">
+                    </td>
+                    <td>
+                        @design.Title
+                    </td>
+                    <td>
+                        @design.SubTitle;
+                    </td>
+                    <td>
+                        <div class="d-flex">
+                            <div>
+                                <a asp-controller="Design" asp-action="Detail" asp-route-id="@design.Id" class="btn btn-primary"><i class="mdi mdi-details"></i></a>
+                            </div>
+
+                            <div>
+                                <a asp-controller="Design" asp-action="Edit" asp-route-id="@design.Id" class="btn btn-success"><i class="mdi mdi-tooltip-edit"></i></a>
+                            </div>
+
+                            <div>
+                                <a asp-controller="Design" asp-action="Delete" asp-route-id="@design.Id" class="btn btn-danger"><i class="mdi mdi-delete-forever"></i></a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

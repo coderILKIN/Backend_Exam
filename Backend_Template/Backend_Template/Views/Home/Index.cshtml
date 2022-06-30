@@ -1,0 +1,107 @@
+﻿@model List<Design>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<main>
+    <section id="main-header">
+        <div class="background-image">
+            <div class="main-logo d-flex justify-content-center">
+                <img src="~/assets/img/logo-big-NEW.png" alt="">
+            </div>
+            <div class="main-about ">
+                <h1>Senkadagala</h1>
+                <p>A simple one page HTML layout.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-5" id="main-computer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="computer-image">
+                        <img src="~/assets/img/big-mac.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="computer-about mt-3">
+                        <h1>What is Senkadagala?</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet dolor nec diam pharetra, eu sodales massa euismod. Maecenas ut tellus sit amet lectus molestie dapibus. Quisque fermentum rutrum felis, nec hendrerit diam mollis.</p>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id ultricies felis. Fusce sed nisi velit. Quisque cursus pharetra diam, non congue ligula sodales at. Phasellus sodales sem sagittis arcu vulputate dictum. Vestibulum faucibus malesuada risus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-5" id="main-member">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="member-card">
+                        <div class="image">
+                            <img src="~/assets/img/user1.png" alt="">
+                        </div>
+
+                        <div class="card-about">
+                            <h3>Member One</h3>
+                            <p class="member">Awesome Designation</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet dolor nec diam pharetra, eu sodales massa euismod. Maecenas ut tellus sit amet lectus molestie dapibus. Quisque fermentum rutrum felis, nec hendrerit diam mollis vitae. Integer sodales varius odio, vel pharetra ante rhoncus vel. Phasellus quis urna rutrum, molestie purus.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="member-card">
+                        <div class="image">
+                            <img src="~/assets/img/user2.png" alt="">
+                        </div>
+
+                        <div class="card-about">
+                            <h3>Member Two</h3>
+                            <p class="member">Awesome Designation</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet dolor nec diam pharetra, eu sodales massa euismod. Maecenas ut tellus sit amet lectus molestie dapibus. Quisque fermentum rutrum felis, nec hendrerit diam mollis vitae. Integer sodales varius odio, vel pharetra ante rhoncus vel. Phasellus quis urna rutrum, molestie purus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="member-card">
+                        <div class="image">
+                            <img src="./assets/img/user3.png" alt="">
+                        </div>
+
+                        <div class="card-about">
+                            <h3>Member Three</h3>
+                            <p class="member">Awesome Designation</p>
+                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet dolor nec diam pharetra, eu sodales massa euismod. Maecenas ut tellus sit amet lectus molestie dapibus. Quisque fermentum rutrum felis, nec hendrerit diam mollis vitae. Integer sodales varius odio, vel pharetra ante rhoncus vel. Phasellus quis urna rutrum, molestie purus.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-5" id="main-design">
+        <div class="container">
+            <div class="row">
+                @foreach (Design design in Model)
+                {
+                    <div class="col1-12 col-sm-12 col-md-6 col-lg-3">
+                        <div class="design-card">
+                            <div class="image">
+                                <img src="~/assets/img/@design.Image" alt="">
+                            </div>
+                            <div class="image-about">
+                                <h5>@design.Title</h5>
+                                <p>@design.SubTitle</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+</main>
+
